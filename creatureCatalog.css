@@ -1,0 +1,101 @@
+:root {
+    --primary-bg-color: #1a1a2e;
+    --secondary-bg-color: #16213e;
+    --card-bg-color: #0f3460;
+    --text-color: #e94560;
+    --grid-gap: 20px;
+    --card-padding: 25px;
+    --card-size: 1fr;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-bg-color);
+    color: #eee;
+    text-align: center;
+    padding: 2rem;
+
+}
+/* --- 宫格核心样式 --- */
+.race-grid-index {
+    display: grid; 
+    
+    /* 创建4列，每列宽度相等 */
+    grid-template-columns: repeat(4, var(--card-size));
+    
+    /* 设置行高，可以是一个固定值，也可以是 'auto' */
+    grid-auto-rows: 250px; 
+    /* 卡片之间的间距 */
+    gap: var(--grid-gap);
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1200px; /* 限制最大宽度，避免在大屏幕上过宽 */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* --- 卡片通用样式 --- */
+.race-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    text-decoration: none; 
+    color: #fff;
+    padding: var(--card-padding);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* 添加过渡动画 */
+    border: 2px solid transparent;
+}
+
+/* 让图片作为卡片背景并使文本位于上方（最小改动，不改 HTML） */
+.race-card{
+    position: relative; /* 使绝对定位的图片容器相对于卡片定位 */
+    overflow: hidden; /* 防止绝对定位内容溢出圆角 */
+}
+
+/* --- 卡片悬停效果 --- */
+.race-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--text-color);
+    background-color: #533483; /* 悬停时背景色微变 */
+    color: #fff;
+}
+/* --- 图片大小限制 --- */
+.card-image{
+    /* 使图片容器覆盖整个卡片，图片作为背景 */
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填充并裁剪，保证充满宫格 */
+    display: block;
+}
+
+/* --- 卡片内容样式 --- */
+.card-image {
+    margin-bottom: 1rem; /* 保留语义，但布局由绝对定位控制 */
+}
+.card-content h3 {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255) ;
+}
+
+/* 让文本位于图片之上并可读 */
+.card-content{
+    position: relative;
+    z-index: 2;
+}
+.race-card::before{
+    /* 半透明遮罩，增强文字对比度 */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+

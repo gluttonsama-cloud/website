@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+header {
+    background-color: #7c5b9c;
+    height: 80px;
+    width: 100%;
+    position: relative;
+}
+h1 {
+    position: absolute;
+    top: 0;
+    color:white;
+    line-height: 80px;
+    margin-left: 5vw;
+}
+header ul{
+    list-style-type: none;
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px;
+
+}
+header a{
+    text-decoration: none;
+    color: white;
+}
+header a:hover{
+    color: #d1c4e9;
+}
+header li{
+    display: inline-block;
+    margin-right:2vw;
+    font-size: 18px;
+}
+
+
+.greeting{
+    height: 75vh;
+    color: white;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("images/无冬城.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.greeting h2{
+    font-size: 60px;
+}
+.greeting p{
+    font-size: 24px;
+    margin-top: 20px;
+    font-style: italic;
+    padding-left: 16px;
+    width: 60%;
+    text-align: center;
+    color: #f0e6ff;
+}
+.About_section{
+    background-color: hsla(264, 52%, 45%, 0.858);
+    color: white;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    line-height: 1.8em;
+}
+.About_section h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding: 0 16px;
+    margin-left: -100px; 
+    border-right: 4px solid #b39ddb; 
+    color: #f0e6ff;
+}
+
+.About_section p{
+    width: 70%;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 60px;
+    color: #f0e6ff;
+}
+.About_section a{
+    text-decoration: none;
+    color: #fddfdf;
+}
+
+
+.illustrated_guide{
+    background: linear-gradient(to bottom, hsla(264, 52%, 45%, 0.858) 0%, rgba(89, 41, 203, 0.95) 100%);
+    color: #f0e6ff;
+    padding: 40px 20px;
+}
+.illustrated_guide h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 24px;
+    border: #fae370 8px ridge;
+    border-radius: 10px;
+    background-color: hsla(257, 21%, 36%, 0.858);
+}
+
+.illustrated-row{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.illustrated-image{
+    flex: 1 1 50%;
+}
+.illustrated-image img{
+    width: 100%;
+    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.illustrated-text{
+    flex: 1 1 50%;
+    line-height: 1.6;
+    margin-left: 80px; 
+    max-width: calc(50% - 80px);
+    border-left: #b39ddb 4px solid;
+    padding-left: 60px;
+}
+.illustrated-text h3{
+    margin-top: -20px;
+    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 3.0;
+}
+
+.illustrated-text a{
+    color: #fddfdf;
+}
+.reverse .illustrated-row{
+    flex-direction: row-reverse;
+}/*翻转*/
+
+
+.illustrated-magic{
+    background: linear-gradient(to bottom, rgba(89, 41, 203, 0.95) 0%, rgba(57, 93, 165, 0.95) 100%);
+    color: #f0f8ff;
+    padding: 40px 20px;
+}
+.illustrated-magic h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 24px;
+    border: #fae370 8px ridge;
+    border-radius: 10px;
+    background-color: hsla(257, 21%, 36%, 0.858);
+}
+
+
+.illustrated_map{
+    background: linear-gradient(to bottom,  rgba(57, 93, 165, 0.95) 0%, rgba(57, 149, 165, 0.95) 100%);
+    color: #f0eefd;
+    padding: 40px 20px;
+}
+.illustrated_map h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 24px;
+    border: #fae370 8px ridge;
+    border-radius: 10px;
+    background-color: hsla(257, 21%, 36%, 0.858);
+}
+.illustrated-text p{
+    margin-bottom: 12px;
+    color: #f7efff;
+}
+
+
+
+.divider{
+  height: 175px; 
+  background-image: url('images/分割线4.webp');
+  background-repeat: repeat-x;
+  background-color: hsla(264, 52%, 45%, 0.858);  
+  background-position: center;
+}
+
+
+
+
+
+footer{
+    background-color: hsla(0, 0%, 0%, 0.858);
+    color: #b7b7b7;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
