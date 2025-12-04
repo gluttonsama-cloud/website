@@ -4,98 +4,127 @@
     --card-bg-color: #0f3460;
     --text-color: #e94560;
     --grid-gap: 20px;
-    --card-padding: 25px;
+    --card-padding: 16px; 
     --card-size: 1fr;
+    --card-border-color: rgba(255,255,255,0.06);
+    --card-title-min: 1rem;
+    --card-title-max: 1.6rem;
 }
 body {
     font-family: 'Arial', sans-serif;
-    background-color: var(--primary-bg-color);
+    background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.55)), url("images/背景图1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     color: #eee;
     text-align: center;
-    padding: 2rem;
+    padding: 0; 
 
 }
-/* --- 宫格核心样式 --- */
+
+main{
+    padding: 2rem;
+}
+
 .race-grid-index {
     display: grid; 
     
-    /* 创建4列，每列宽度相等 */
+   
     grid-template-columns: repeat(4, var(--card-size));
     
-    /* 设置行高，可以是一个固定值，也可以是 'auto' */
-    grid-auto-rows: 250px; 
-    /* 卡片之间的间距 */
+   
+    grid-auto-rows: auto;
+    
     gap: var(--grid-gap);
     margin-top: 2rem;
     width: 100%;
-    max-width: 1200px; /* 限制最大宽度，避免在大屏幕上过宽 */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
-/* --- 卡片通用样式 --- */
+/*动画ai生成*/
 .race-card {
     background-color: var(--card-bg-color);
-    border-radius: 10px;
+    border-radius: 50%; 
+    aspect-ratio: 1 / 1; 
     text-decoration: none; 
     color: #fff;
-    padding: var(--card-padding);
     display: flex; 
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* 添加过渡动画 */
-    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease; 
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 -6px 18px rgba(0,0,0,0.12);
+    width: 100%; 
+    box-sizing: border-box;
 }
 
-/* 让图片作为卡片背景并使文本位于上方（最小改动，不改 HTML） */
+
 .race-card{
-    position: relative; /* 使绝对定位的图片容器相对于卡片定位 */
-    overflow: hidden; /* 防止绝对定位内容溢出圆角 */
+    position: relative; 
+    overflow: hidden; 
 }
 
-/* --- 卡片悬停效果 --- */
+/* 悬停 */
 .race-card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    border-color: var(--text-color);
-    background-color: #533483; /* 悬停时背景色微变 */
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.5), inset 0 -8px 20px rgba(0,0,0,0.14);
+    border-color: rgba(233,69,96,0.12);
     color: #fff;
 }
-/* --- 图片大小限制 --- */
+
+.race-card,
+.race-card img {
+    outline: none;
+    border: none;
+}
+.race-card:focus {
+    outline: none;
+}
+
 .card-image{
-    /* 使图片容器覆盖整个卡片，图片作为背景 */
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    inset: 0; 
 }
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 填充并裁剪，保证充满宫格 */
+    object-fit: cover; 
+    object-position: center center;
     display: block;
 }
 
-/* --- 卡片内容样式 --- */
-.card-image {
-    margin-bottom: 1rem; /* 保留语义，但布局由绝对定位控制 */
-}
+/* 卡片*/
 .card-content h3 {
     margin: 0;
-    font-size: 4rem;
     font-weight: 600;
     color: rgb(255, 255, 255) ;
+    font-size: clamp(var(--card-title-min), 2.4vw, var(--card-title-max));
+    line-height: 1.05;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 0 6px;
 }
 
-/* 让文本位于图片之上并可读 */
 .card-content{
     position: relative;
     z-index: 2;
+    padding: var(--card-padding); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
 }
 .race-card::before{
-    /* 半透明遮罩，增强文字对比度 */
+
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.55) 100%);
     z-index: 1;
-}
+}/* 遮罩 */
+
 

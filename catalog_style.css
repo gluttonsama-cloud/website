@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Cinzel+Decorative:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -40,11 +42,28 @@ header li{
 }
 
 .catalogHeader{
-    padding: 20px;
+    padding: 32px 20px; 
     text-align: center;
-    background-color: #6a4b8d;
+    background: linear-gradient(180deg, #6a4b8d 0%, #5a3b7a 100%);
+    max-width: 1200px; 
+    margin: 0 auto 28px; 
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    color: #f7eefc;
+    border: #fae370 8px ridge;
+    border-radius: 10px;
 }
 
+
+.catalogHeader h2{
+    font-family: 'IM Fell English SC','Cinzel Decorative', Georgia, 'Times New Roman', serif; 
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    color: #efe1b8; 
+    letter-spacing: 3.0px;
+    font-weight: 400;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.55), 0 6px 20px rgba(0,0,0,0.28);
+}
 
 footer{
     background-color: hsla(0, 0%, 0%, 0.858);
